@@ -45,8 +45,10 @@ it will work fine :smiley:
 ***Managed Mode*** may not work, so you have to start it manually
 when you run fluxion2, fluxion2 change wifi card mode form ***Managed Mode*** to ***Monitor Mode*** and when you stop fluxion2 ***Managed Mode*** may not work
 
-to restart ***Managed Mode***
+there are two ways to restart ***Managed Mode***
+- First one, just restart the machine :rofl:
 
+- the second one
 `iwconfig`
 
 ```bash
@@ -74,8 +76,7 @@ my wifiCard `mon0`
 
 `sudo service network-manager restart`
 
-
-
+it will work fine :smiley:
 
 
 
