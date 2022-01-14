@@ -59,12 +59,18 @@ wlp8s0    IEEE 802.11  ESSID:off/any
           
 mon0      IEEE 802.11  Mode:Monitor  Frequency:2.437 GHz  Tx-Power=-2147483648 dBm   
           Retry short limit:7   RTS thr:off   Fragment thr:off
-          Power Management:on
-          
+          Power Management:on   
 
 ```
+my wifiCard `mon0` 
+
+![](/Images/mon0.png)
 
 `sudo airmon-ng stop mon0`
+
+`sudo service networking restart`
+
+`sudo service network-manager restart`
 
 
 
