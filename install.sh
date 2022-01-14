@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yes | sudo pacman -S aircrack-ng dhcp lighttpd macchanger nmap xterm php-cgi debtap
+yes | sudo pacman -S aircrack-ng dhcp lighttpd macchanger nmap xterm php-cgi python2
 
 
 echo "installing mdk3..... "
