@@ -18,6 +18,8 @@ or using ***github-cli*** `gh repo clone mmsaeed509/fluxion`
 
 run fluxion2 `sudo ./fluxion.sh`
 
+## If you encounter an issue, create a new issue so I can help you.
+
 # Issues
 
 ***[mdk3](https://github.com/charlesxsh/mdk3-master)*** may not be installed, so you have to install it manually
