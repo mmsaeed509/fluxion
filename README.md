@@ -49,6 +49,7 @@ there are two ways to restart ***Managed Mode***
 - First one, just restart the machine :rofl:
 
 - the second one
+
 `iwconfig`
 
 ```bash
