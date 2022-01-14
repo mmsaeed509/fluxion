@@ -16,7 +16,7 @@ or using ***github-cli*** `gh repo clone mmsaeed509/fluxion`
 
 `cd fluxion`
 
-`sudo ./fluxion.sh`
+run fluxion2 `sudo ./fluxion.sh`
 
 # Issues
 
