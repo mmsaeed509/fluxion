@@ -38,3 +38,36 @@ then `cd ..`
 
 it will work fine :smiley:
 
+#
+
+***Managed Mode*** may not work, so you have to start it manually
+when you run fluxion2, fluxion2 change wifi card mode form ***Managed Mode*** to ***Monitor Mode*** and when you stop fluxion2 ***Managed Mode*** may not work
+
+to restart ***Managed Mode***
+
+`iwconfig`
+
+```bash
+lo        no wireless extensions.
+
+enp7s0    no wireless extensions.
+
+wlp8s0    IEEE 802.11  ESSID:off/any  
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=22 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          
+mon0      IEEE 802.11  Mode:Monitor  Frequency:2.437 GHz  Tx-Power=-2147483648 dBm   
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:on
+          
+
+```
+
+`sudo airmon-ng stop mon0`
+
+
+
+
+
+
