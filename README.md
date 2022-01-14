@@ -18,7 +18,7 @@ or using ***github-cli*** `gh repo clone mmsaeed509/fluxion`
 
 `sudo ./fluxion.sh`
 
-#### Issues
+# Issues
 
 ***[mdk3](https://github.com/charlesxsh/mdk3-master)*** may not be installed, so you have to install it manually
 `cd ..` 
