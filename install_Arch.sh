@@ -11,9 +11,7 @@ git clone https://github.com/Info-security/mdk3.git
 
 cd /mdk3-master
 
-make
-
-sudo make install
+make && sudo make install
 
 cd ..
 
