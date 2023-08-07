@@ -1,0 +1,37 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=mdk3
+pkgver=v6
+pkgrel=1
+pkgdesc="WLAN penetration tool"
+url="https://www.kali.org/tools/mdk3/"
+arch=("any")
+license=('GPL2')
+depends=('glibc' 'aircrack-ng')
+source=(https://salsa.debian.org/pkg-security-team/${pkgname}/-/archive/debian/master/${pkgname}-debian-master.tar.bz2)
+sha512sums=('SKIP')
+
+prepare() {
+
+  cd ${pkgname}-debian-master
+  sed 's|sbin|bin|g' -i Makefile
+
+}
+
+
+build() {
+
+  cd ${pkgname}-debian-master
+  make -C osdep
+  make
+
+}
+package() {
+
+  cd ${pkgname}-debian-master
+  make DESTDIR="${pkgdir}" PREFIX="/usr" install
+  install -Dm 644 docs/*.html -t "${pkgdir}/usr/share/doc/${pkgname}"
+  
+}

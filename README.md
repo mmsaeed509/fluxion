@@ -69,7 +69,7 @@ mon0      IEEE 802.11  Mode:Monitor  Frequency:2.437 GHz  Tx-Power=-2147483648 d
 ```
 my wifiCard `mon0` 
 
-![](/Images/mon0.png)
+![](/imgs/mon0.png)
 
 `sudo airmon-ng stop mon0`
 

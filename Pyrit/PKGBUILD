@@ -1,0 +1,55 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+_pkgname=Pyrit
+pkgname=pyrit
+pkgver=0.5.0
+pkgrel=1
+pkgdesc='The famous WPA precomputed cracker'
+url='https://github.com/JPaulMora/Pyrit'
+arch=('any')
+license=('GPL3')
+depends=('openssl' 'python2' 'zlib' 'libpcap' 'scapy')
+source=(
+	"${pkgname}-${pkgver}.tar.gz::https://github.com/JPaulMora/Pyrit/archive/v${pkgver}.tar.gz"
+    "scapy-2.3.2.patch"
+    "fix-broken-join.patch"
+)
+sha512sums=(
+	'SKIP'
+    'SKIP'
+    'SKIP'
+)
+
+prepare() {
+
+  cd ${srcdir}/${_pkgname}-${pkgver}
+  patch -p1 < "${srcdir}/scapy-2.3.2.patch"
+  patch -p1 -i ../fix-broken-join.patch # Fix tests (Debian)
+
+}
+
+build() {
+
+  cd ${srcdir}/${_pkgname}-${pkgver}
+  python2 setup.py build
+
+}
+
+# check() {
+
+#   cd ${srcdir}/${_pkgname}-${pkgver}/test
+#   local PYTHONVERSION="$(python2 -c 'import sys; print("{}.{}".format(sys.version_info.major, sys.version_info.minor))')"
+#   PYTHONPATH="../build/lib.linux-${CARCH}-${PYTHONVERSION}" \
+#   python2 test_pyrit.py
+
+# }
+
+package() {
+
+  cd ${srcdir}/${_pkgname}-${pkgver}
+  python2 setup.py install -O1 --root="${pkgdir}" --skip-build
+  install -Dm 644 README.md CHANGELOG -t "${pkgdir}/usr/share/doc/${pkgname}"
+
+}

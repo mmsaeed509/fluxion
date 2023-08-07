@@ -1,0 +1,34 @@
+#
+# Maintainer: Mahmoud Mohamed (00xWolf) <mmsaeed509@gmail.com> , <https://github.com/mmsaeed509>
+#
+
+pkgname=exodia-fluxion
+_pkgname=fluxion
+pkgver=2.0
+pkgrel=1
+conflicts=(${_pkgname})
+pkgdesc="Security auditing and social-engineering research tool"
+url="https://github.com/FluxionNetwork/fluxion"
+arch=("any")
+license=('GPL#')
+depends=(
+  'bc' 'xterm' 'unzip' 'p7zip' 'openssl' 'net-tools'
+  'php-cgi' 'curl' 'dhcp' 'hostapd' 'lighttpd' 'iw'
+  'wireless_tools' 'nmap' 'dsniff' 'macchanger'
+  'aircrack-ng' 'cowpatty' 'mdk3' 'mdk4' 'pyrit'
+)
+
+source=(fluxion.tar.gz)
+sha512sums=('SKIP')
+
+package() {
+
+  FLUXION_DIR=${pkgdir}/usr/share
+  FLUXION_BIN_DIR=${pkgdir}/usr/bin
+  mkdir -p "${FLUXION_DIR}" "${FLUXION_BIN_DIR}"
+
+  cp -r ${srcdir}/${_pkgname} "${FLUXION_DIR}"
+
+  cp -r ${FLUXION_DIR}/${_pkgname}/fluxion.sh "${FLUXION_BIN_DIR}/fluxion"
+  
+}
